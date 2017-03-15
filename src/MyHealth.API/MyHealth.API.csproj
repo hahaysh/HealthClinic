@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>MyHealth</Description>
+    <Authors>Microsoft</Authors>
+    <TargetFrameworks>dnx451;dnxcore50</TargetFrameworks>
+    <DefineConstants>$(DefineConstants);O365INTEGRATION</DefineConstants>
+    <AssemblyName>MyHealth.API</AssemblyName>
+    <PackageId>MyHealth.API</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyHealth.Data\MyHealth.Data.csproj" />
+    <ProjectReference Include="..\MyHealth.Model\MyHealth.Model.csproj" />
+    <ProjectReference Include="..\MyHealth.Office365\MyHealth.Office365.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="6.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Net.Http.Server" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'dnx451' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'dnxcore50' ">
+    <PackageReference Include="System.Collections" Version="4.0.11" />
+    <PackageReference Include="System.Linq" Version="4.1.0" />
+    <PackageReference Include="System.Threading" Version="4.0.11" />
+    <PackageReference Include="System.Runtime" Version="4.1.0" />
+  </ItemGroup>
+
+</Project>

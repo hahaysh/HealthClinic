@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>HealthClinic.biz</Description>
+    <Authors>Microsoft</Authors>
+    <TargetFrameworks>dnx451;dnxcore50</TargetFrameworks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AssemblyName>MyHealth.Web</AssemblyName>
+    <PackageId>MyHealth.Web</PackageId>
+    <UserSecretsId>aspnet5-MyHealth.Web-17953c6e-be46-4977-aa87-ea6ba99f42e2</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\**\*;node_modules;bower_components" />
+    <EmbeddedResource Remove="wwwroot\**\*;node_modules;bower_components" />
+    <None Update="node_modules;bower_components;**.xproj;**.user;**.vspscc">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyHealth.Model\MyHealth.Model.csproj" />
+    <ProjectReference Include="..\MyHealth.Office365\MyHealth.Office365.csproj" />
+    <ProjectReference Include="..\MyHealth.Data\MyHealth.Data.csproj" />
+    <ProjectReference Include="..\MyHealth.API\MyHealth.API.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Server.Kestrel" Version="1.0.0-rc1-final" />
+    <PackageReference Include="EntityFramework.InMemory" Version="7.0.0-rc1-final" />
+    <PackageReference Include="EntityFramework.MicrosoftSqlServer" Version="7.0.0-rc1-final" />
+    <PackageReference Include="EntityFramework.Commands" Version="7.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="6.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.AspNet.Mvc.TagHelpers" Version="6.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.AspNet.Authentication.Cookies" Version="1.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.AspNet.Diagnostics" Version="1.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.AspNet.Diagnostics.Entity" Version="7.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="3.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.AspNet.Session" Version="1.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.AspNet.IISPlatformHandler" Version="1.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.AspNet.StaticFiles" Version="1.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.AspNet.Tooling.Razor" Version="1.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.0.2" />
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="3.13.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.0.1" />
+    <PackageReference Include="Microsoft.AspNet.Mvc.WebApiCompatShim" Version="6.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNet" Version="1.0.0-rc1" />
+    <PackageReference Include="Microsoft.Extensions.DiagnosticAdapter" Version="1.0.2" />
+    <PackageReference Include="System.Runtime.Serialization.Json" Version="4.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'dnx451' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish" Condition=" '$(IsCrossTargetingBuild)' != 'true' ">
+    <Exec Command="npm install" />
+    <Exec Command="bower install" />
+    <Exec Command="gulp clean" />
+    <Exec Command="gulp default" />
+  </Target>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'dnxcore50' ">
+    <PackageReference Include="System.Globalization" Version="4.0.11" />
+    <PackageReference Include="System.Text.Encoding" Version="4.0.11" />
+  </ItemGroup>
+
+</Project>
