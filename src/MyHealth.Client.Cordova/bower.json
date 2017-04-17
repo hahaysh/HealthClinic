@@ -1,9 +1,23 @@
 {
   "name": "MyHealth.Client.Cordova",
   "dependencies": {
-    "ionic": "driftyco/ionic-bower#1.2.4",
-    "jquery": "~2.1.4",
-    "moment": "~2.10.6",
-    "es6-promise": "~3.0.2"
+    "ionic": "v3.0.1",
+    "jquery": "3.2.1",
+    "moment": "2.18.1",
+    "es6-promise": "v4.0.5",
+    "angular": "v1.6.5-build.5353+sha.136a42a",
+    "angular-ui-router": "1.0.0-rc.1",
+    "angular-sanitize": "v1.6.5-build.5353+sha.136a42a",
+    "angular-animate": "v1.6.5-build.5353+sha.136a42a"
+  },
+  "resolutions": {
+    "es6-promise": "v4.0.5",
+    "ionic": "v3.0.1",
+    "angular": "v1.6.5-build.5353+sha.136a42a",
+    "angular-animate": "v1.6.5-build.5353+sha.136a42a",
+    "angular-sanitize": "v1.6.5-build.5353+sha.136a42a",
+    "moment": "2.18.1",
+    "angular-ui-router": "1.0.0-rc.1",
+    "jquery": "3.2.1"
   }
 }

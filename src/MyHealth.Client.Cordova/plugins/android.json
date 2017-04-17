@@ -1,0 +1,61 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "code-push": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        },
+        "com.internrocket.plugins.statusbarcolor": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        },
+        "cordova-plugin-code-push": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        },
+        "cordova-plugin-transport-security": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        },
+        "cordova-plugin-zip": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "healthclinic.client.doctors"
+        }
+    }
+}
